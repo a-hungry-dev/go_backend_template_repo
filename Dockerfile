@@ -1,8 +1,9 @@
-FROM golang:1.8-alpine
+FROM golang:1.8
 
 WORKDIR /go/src/app
 COPY . .
 
+RUN go get gopkg.in/labstack/echo.v4
 RUN go get -d -v ./...
 RUN go install -v ./...
 

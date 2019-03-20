@@ -2,11 +2,12 @@ package api
 
 import (
 	"app/model"
-	"github.com/labstack/echo"
-	"github.com/valyala/fasthttp"
+	"net/http"
+
+	"gopkg.in/labstack/echo.v4"
 )
 
 func GetVersion(c echo.Context) error {
 	v := model.NewVersion(1)
-	return c.JSON(fasthttp.StatusOK, v)
+	return c.JSON(http.StatusOK, v)
 }
